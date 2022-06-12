@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-zinc-50;
+}
+
+.active {
+  @apply opacity-100;
+}
+
+@layer components {
+  .navlink {
+    @apply rounded-t-sm border-neutral-300 bg-zinc-50 py-3 px-3  font-semibold text-sky-900 opacity-70;
+  }
+}
