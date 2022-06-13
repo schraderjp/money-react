@@ -67,11 +67,11 @@ const Expenses = () => {
     <>
       <div className="mx-auto flex w-[min(400px,85vw)] items-center justify-between pt-1 text-lg font-bold">
         <div className="flex w-full items-center justify-between py-1">
-          <span className="mr-auto w-full flex-auto px-1 text-red-600 text-3xl">
+          <span className="mr-auto w-full flex-auto px-1 text-red-600 text-lg">
             $
             {filter
-              ? filteredExpenses && getTotal(filteredExpenses).toFixed(2)
-              : expenses && getTotal(expenses).toFixed(2)}
+              ? filteredExpenses && Math.trunc(getTotal(filteredExpenses))
+              : expenses && Math.trunc(getTotal(expenses))}
           </span>
 
           <div className="mx-auto flex w-full flex-auto items-center justify-center gap-x-3 px-1">

@@ -7,7 +7,6 @@ const Dashboard = () => {
   const expenses = useLiveQuery(() => db.expenses.toArray());
   const income = useLiveQuery(() => db.income.toArray());
 
-
   return (
     <div className="mx-auto flex w-[min(400px,85vw)] flex-col justify-center">
       <h2 className="py-2 text-center text-lg font-bold">Dashboard</h2>
