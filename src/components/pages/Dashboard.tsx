@@ -16,8 +16,8 @@ const Dashboard = () => {
         <div className="mx-auto flex flex-col max-w-max">
 
             <div className="h-12 relative w-full bg-sky-200">
-                <span className="flex absolute items-center justify-center h-full pr-2 font-bold w-full">{getTotal(expenses) > getTotal(income) ? '100' :(getTotal(expenses) / getTotal(income) * 100).toFixed(0)}%</span>
-              <div className={`h-full  ${getTotal(expenses) > getTotal(income) ? 'bg-red-500' : 'bg-red-400'}`} style={{width:getTotal(expenses) > getTotal(income) ? '100%' : `${(getTotal(expenses) / getTotal(income) * 100).toFixed(0)}%`}}>
+                <span className="flex absolute items-center justify-center h-full pr-2 font-bold w-full">{getTotal(expenses) > getTotal(income) ? '100' : isNaN(getTotal(expenses) / getTotal(income) * 100) ? '0' : (getTotal(expenses) / getTotal(income) * 100).toFixed(0)}%</span>
+              <div className={`h-full  ${getTotal(expenses) > getTotal(income) ? 'bg-red-500' : 'bg-red-400'}`} style={{width: getTotal(expenses) > getTotal(income) ? '100%' : isNaN(getTotal(expenses) / getTotal(income) * 100) ? '0%' : `${(getTotal(expenses) / getTotal(income) * 100).toFixed(0)}%`}}>
               </div>
           </div>
           <div className="flex mt-2">
