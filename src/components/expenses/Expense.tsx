@@ -21,7 +21,7 @@ const Expense = ({
   id: number | undefined;
 }) => {
   return (
-    <div className="grid h-16 w-[min(400px,85vw)] grid-cols-2 grid-rows-2 items-center gap-y-1 rounded-lg bg-red-100 px-2 py-1 drop-shadow-md">
+    <div className="ml-[10px] grid h-16 w-[min(400px,85vw)] grid-cols-2 grid-rows-2 items-center gap-y-1 rounded-lg bg-red-100 px-2 py-1 drop-shadow-md">
       <div className="mx-1 flex items-center text-lg font-semibold text-neutral-700">
         {label}
       </div>
