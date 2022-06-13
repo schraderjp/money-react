@@ -66,22 +66,22 @@ const Expenses = () => {
   return (
     <>
       <div className="mx-auto flex w-[min(400px,85vw)] items-center justify-between pt-1 text-lg font-bold">
-        <div className="flex w-full items-center justify-between">
-          <span className="mr-auto w-full flex-auto px-1 text-red-600">
+        <div className="flex w-full items-center justify-between py-1">
+          <span className="mr-auto w-full flex-auto px-1 text-red-600 text-3xl">
             $
             {filter
               ? filteredExpenses && getTotal(filteredExpenses).toFixed(2)
               : expenses && getTotal(expenses).toFixed(2)}
           </span>
 
-          <div className="mx-auto flex w-full flex-auto items-center justify-center gap-x-1 px-1">
+          <div className="mx-auto flex w-full flex-auto items-center justify-center gap-x-3 px-1">
             <button
               onClick={() =>
                 sort === "" || sort === "desc"
                   ? setSort("asc")
                   : setSort("desc")
               }
-              className="flex h-8 w-8 items-center justify-center rounded border bg-slate-300 p-[0.3rem] text-neutral-800 ring-slate-400 hover:brightness-90 active:ring "
+              className="flex h-12 w-12 items-center justify-center rounded border bg-slate-300 p-[0.3rem] text-neutral-800 ring-slate-400 hover:brightness-90 active:ring "
             >
               {sort === "asc" ? (
                 <FaSortAmountUp />
@@ -94,11 +94,11 @@ const Expenses = () => {
             <div className="relative">
               <button
                 onClick={() => setShowFilterMenu(!showFilterMenu)}
-                className={`flex h-8 w-8 items-center justify-center rounded ${
+                className={`flex h-12 w-12 items-center justify-center rounded ${
                   filter !== ""
                     ? "bg-slate-400 ring-slate-500"
                     : "bg-slate-300 ring-slate-400"
-                }  p-[0.3rem] text-neutral-800  hover:brightness-90 active:ring`}
+                }  p-[0.3rem] text-neutral-800 border hover:brightness-90 active:ring`}
               >
                 <FaFilter />
               </button>
@@ -129,7 +129,7 @@ const Expenses = () => {
                       })
                       .map((category) => (
                         <button
-                          className="flex w-full items-center rounded-t py-1 px-2 text-lg font-semibold hover:text-blue-700"
+                          className="flex  items-center rounded-t w-full py-1 px-2 text-lg font-semibold hover:text-blue-700"
                           key={category}
                           onClick={() => {
                             setFilter(category);
@@ -156,7 +156,7 @@ const Expenses = () => {
                 setActiveId(null);
                 setIsOpen(true);
               }}
-              className="ml-auto select-none rounded-full bg-red-300 px-2 py-2 text-center font-bold drop-shadow-md transition-transform active:scale-95"
+              className="ml-auto select-none rounded-full h-12 w-12 flex items-center justify-center bg-red-300 px-2 py-2 text-center font-bold drop-shadow-md transition-transform active:scale-95"
             >
               <FaPlus />
             </button>
