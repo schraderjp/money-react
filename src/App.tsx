@@ -18,7 +18,8 @@ function App() {
     delay: 0,
   });
   return (
-    <div className="container mx-auto flex h-screen flex-col overflow-hidden bg-zinc-50 shadow-xl">
+    <div className="h-screen w-screen fixed top-0 left-0">
+      <div className="container mx-auto flex h-screen flex-col overflow-hidden bg-zinc-50 shadow-xl">
       <header className=" w-full bg-sky-600">
         <div className="flex h-12 w-full items-center justify-center text-neutral-50">
           <h1 className="text-2xl font-bold">💵 React Money</h1>
@@ -40,7 +41,7 @@ function App() {
       </header>
       {transition((props, item) => (
         <animated.main
-          className="flex flex-col overflow-hidden p-1"
+          className="flex flex-col flex-grow flex-auto overflow-hidden p-1"
           style={props}
         >
           <Routes location={item}>
@@ -52,6 +53,8 @@ function App() {
         </animated.main>
       ))}
     </div>
+    </div>
+    
   );
 }
 
